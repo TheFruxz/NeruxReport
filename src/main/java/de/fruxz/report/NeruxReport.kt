@@ -10,9 +10,23 @@ import org.bukkit.configuration.serialization.ConfigurationSerializable
 import org.bukkit.configuration.serialization.ConfigurationSerialization
 import org.bukkit.plugin.java.JavaPlugin
 
+/**
+ * This is the main class, it helps us to load systems,
+ * start services and register classes
+ * @author Fruxz
+ * @since v1.0
+ * @see JavaPlugin
+ */
 class NeruxReport : JavaPlugin() {
 
     companion object {
+
+        /**
+         * This is the permission, which is required to manage reports
+         * of the NeruxReport P-Server Plugin
+         * @author Fruxz
+         * @since v1.0
+         */
         val permissionReportManager = "neruxreport.managing"
     }
 
@@ -41,6 +55,12 @@ class NeruxReport : JavaPlugin() {
         super.onDisable()
     }
 
+    /**
+     * This function helps to easily register a serializable
+     * class to the NeruxReport P-Server plugin
+     * @author Fruxz
+     * @since v1.0
+     */
     private fun ser(clazz: Class<out ConfigurationSerializable>) {
         ConfigurationSerialization.registerClass(clazz)
     }
