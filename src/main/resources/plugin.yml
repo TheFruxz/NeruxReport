@@ -4,3 +4,13 @@ main: de.fruxz.report.NeruxReport
 authors: [ Fruxz, TheFruxz ]
 description: NeruxReport ist ein Report-Plugin für die NeruxVace-PServer
 website: https://github.com/TheFruxz/NeruxReport
+commands:
+  psreport:
+    description: Meldet einen Spieler mithilfe seines Namens und seines Grundes
+    usage: /<command> <Spieler> <Grund>
+  psreportslist:
+    description: Liste einige der Meldungen auf
+    usage: /<command>
+  psreportsclose:
+    description: Schließt eine Meldung und tut dieses als "Abgeschlossen" kennzeichnen
+    usage: /<command> <Report-ID>
