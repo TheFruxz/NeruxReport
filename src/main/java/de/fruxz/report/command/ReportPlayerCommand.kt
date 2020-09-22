@@ -52,7 +52,7 @@ class ReportPlayerCommand : CommandExecutor {
 
                                     val reportAmounts = ReportManager().isReportedAmount(target.uniqueId)
 
-                                    Transmission("§7Der Report gegen §e${target.name}§7 wurde erfolgreich unter der ID §a$reportID §7erstellt!").send(sender)
+                                    Transmission("§7Der P-Server Report gegen §e${target.name}§7 wurde erfolgreich unter der ID §a$reportID §7erstellt!").send(sender)
 
                                     sender.playSound(sender.location, Sound.NOTE_PLING, 1F, 2F)
                                     sender.playSound(sender.location, Sound.CHEST_CLOSE, 1F, 2F)
@@ -65,7 +65,7 @@ class ReportPlayerCommand : CommandExecutor {
                                 } else
                                     Transmission("§7Den Spieler §e${args[0]} §7hast du §cbereits gemeldet§7!").send(sender)
                             } else
-                                Transmission("§7Der Spieler §e${args[0]} §7 wurde §cnoch nie §7gesehen!").send(sender)
+                                Transmission("§7Der Spieler §e${args[0]} §7 wurde hier §cnoch nie §7gesehen!").send(sender)
                         } else
                             Transmission("§7Du kannst nur §cmaximal 20 Personen gleichzeitig §7aktiv gemeldet haben!").send(sender)
                     } else

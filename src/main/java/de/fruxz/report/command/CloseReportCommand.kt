@@ -37,13 +37,13 @@ class CloseReportCommand : CommandExecutor {
                             if (Bukkit.getOfflinePlayer(currentReport.reporter).isOnline) {
                                 val reporter = Bukkit.getPlayer(currentReport.reporter)
 
-                                Transmission("§7Dein PS-Report gegen §e${Bukkit.getOfflinePlayer(currentReport.reported).name} §7wurde §abearbeitet und abgeschlossen§7!").send(reporter)
+                                Transmission("§7Dein P-Server Report gegen §e${Bukkit.getOfflinePlayer(currentReport.reported).name} §7wurde §abearbeitet und abgeschlossen§7!").send(reporter)
 
                             }
 
                         }
                     } else
-                        Transmission("§7Ein PS-Report mit der ID §e$id§7 konnte §cnicht gefunden§7 werden!").send(sender)
+                        Transmission("§7Ein P-Server Report mit der ID §e$id§7 konnte §cnicht gefunden§7 werden!").send(sender)
 
                 } else
                     Transmission("§7Der Eingabeparameter §e${args[0]} §7muss einer §cZahl entsprechen§7!").send(sender)
