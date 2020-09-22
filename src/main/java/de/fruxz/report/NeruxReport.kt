@@ -42,9 +42,11 @@ class NeruxReport : JavaPlugin() {
         getCommand("psreport").tabCompleter = ReportPlayerCommand().tabCompleter
 
         getCommand("psreportslist").executor = ListReportsCommand()
+        getCommand("psreportslist").permission = permissionReportManager
 
         getCommand("psreportsclose").executor = CloseReportCommand()
         getCommand("psreportsclose").tabCompleter = CloseReportCommand().tabCompleter
+        getCommand("psreportsclose").permission = permissionReportManager
 
         ReportCooldownManager.runner.runTaskTimerAsynchronously(this, 20, 20)
 
