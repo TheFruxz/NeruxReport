@@ -1,6 +1,10 @@
 # NeruxReport
 NeruxReport is a plugin that was originally freely developed by Fruxz (@TheFruxz) as NeruxVace P-Server Plugin.
 
+## Website
+Original Website powered by GitHub Pages
+> WEBSITE >> [GitHub Pages - LINK](https://thefruxz.github.io/NeruxReport/)
+
 ## Description
 This Plugin gives the possibility of announcing players simply (reports) and of making thus the entitled persons attentive on a rule offence
 
