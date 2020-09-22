@@ -1,0 +1,6 @@
+name: NeruxReport
+version: @version@
+main: de.fruxz.report.NeruxReport
+authors: [ Fruxz, TheFruxz ]
+description: NeruxReport ist ein Report-Plugin für die NeruxVace-PServer
+website: https://github.com/TheFruxz/NeruxReport
