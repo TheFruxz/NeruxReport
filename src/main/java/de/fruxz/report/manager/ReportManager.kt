@@ -1,27 +1,38 @@
 package de.fruxz.report.manager
 
+import de.fruxz.report.domain.FileManager
 import de.fruxz.report.domain.Report
-import org.bukkit.configuration.file.YamlConfiguration
-import java.io.File
+import org.bukkit.configuration.MemorySection
 import java.util.*
 import kotlin.collections.ArrayList
-import kotlin.collections.LinkedHashMap
+import kotlin.collections.HashMap
 
 class ReportManager {
 
-    private val configFile = File("plugins/NeruxReport", "reports.data")
-    private val loader = YamlConfiguration.loadConfiguration(configFile)
+    val data = FileManager("reports.data")
 
     @Suppress("UNCHECKED_CAST")
-    var reports: LinkedHashMap<Int, Report>
+    var reports: SortedMap<Int, Report>
         get() {
-            loader.load(configFile)
-            return loader.get("reports") as LinkedHashMap<Int, Report>
+            val keys = data.get<MemorySection>("reports")?.getKeys(false) ?: emptySet()
+            val out = HashMap<Int, Report>()
+
+            keys.forEach {
+                val o = data.get<Report>("reports.$it")
+
+                if (o != null)
+                    out[it.toInt()] = o
+            }
+
+            //return data.get<HashMap<Int, Report>>("reports")?.toSortedMap() ?: emptyMap<Int, Report>().toSortedMap()
+
+            return if (!out.isNullOrEmpty()) {
+                out.toSortedMap()
+            } else
+                emptyMap<Int, Report>().toSortedMap()
         }
         set(value) {
-            loader.load(configFile)
-            loader.set("reports", value)
-            loader.save(configFile)
+            data.set("reports", value)
         }
 
     fun hasReported(reporter: UUID) = reports.values.any { it.reporter == reporter }
