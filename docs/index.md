@@ -1,37 +1,22 @@
-## Welcome to GitHub Pages
+# NeruxReport
+NeruxReport is a plugin that was originally freely developed by Fruxz (@TheFruxz) as NeruxVace P-Server Plugin.
 
-You can use the [editor on GitHub](https://github.com/TheFruxz/NeruxReport/edit/main/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## Description
+This Plugin gives the possibility of announcing players simply (reports) and of making thus the entitled persons attentive on a rule offence
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Permission
+To manage and view the current reports, the player requires the only one permission: "***neruxreport.managing***"
 
-### Markdown
+## Commands
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+- /psreport - Reports a player and saves the report to the file
+- /psreportslist - Lists the Top-4 of the most reported players
+- /psreportsclose - Close the P-Server Report with the ID and if the reporter is online, he becomes an 'success' message!
 
-```markdown
-Syntax highlighted code block
+## Cooldowns
+After creating a report successfully the player have to wait 1 minute, to create an another Report
 
-# Header 1
-## Header 2
-### Header 3
+## OverReporting - Safety System
+In order to prevent excessive reporting of players, only 20 players can currently be actively reporting from one single player.
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/TheFruxz/NeruxReport/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+// Thank you for reading and have fun!
