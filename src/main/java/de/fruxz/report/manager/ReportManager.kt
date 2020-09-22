@@ -7,10 +7,28 @@ import java.util.*
 import kotlin.collections.ArrayList
 import kotlin.collections.HashMap
 
+/**
+ * This class helps to easily manage current
+ * reports, search-filters and more things.
+ * @author Fruxz
+ * @since v1.0
+ */
 class ReportManager {
 
+    /**
+     * This ***val*** contains the file of the
+     * reports and its save/read-structure
+     * @author Fruxz
+     * @since v1.0
+     */
     val data = FileManager("reports.data")
 
+    /**
+     * This ***var*** helps to save and read the current
+     * and new reports and its changes
+     * @author Fruxz
+     * @since v1.0
+     */
     @Suppress("UNCHECKED_CAST")
     var reports: SortedMap<Int, Report>
         get() {
@@ -41,6 +59,13 @@ class ReportManager {
     fun isReportedAmount(reported: UUID) = reports.values.filter { it.reported == reported }.size
     fun hasReportedAmount(reporter: UUID) = reports.values.filter { it.reporter == reporter }.size
 
+    /**
+     * This function returns every single report
+     * sorted by the report-amounts in a ArrayList
+     * @return sorted report list
+     * @author Fruxz
+     * @since v1.0
+     */
     fun allReports(): ArrayList<Pair<Int, Report>> {
         val allReports = ArrayList<Pair<Int, Report>>()
 

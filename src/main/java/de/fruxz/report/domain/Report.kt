@@ -4,6 +4,12 @@ import org.bukkit.OfflinePlayer
 import org.bukkit.configuration.serialization.ConfigurationSerializable
 import java.util.*
 
+/**
+ * This class helps to easily manage and write
+ * Reports to files and systems
+ * @author Fruxz
+ * @since v1.0
+ */
 class Report : ConfigurationSerializable {
 
     companion object {
