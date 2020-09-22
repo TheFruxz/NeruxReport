@@ -8,6 +8,9 @@ commands:
   psreport:
     description: Meldet einen Spieler mithilfe seines Namens und seines Grundes
     usage: /<command> <Spieler> <Grund>
-  pslistreports:
+  psreportslist:
     description: Liste einige der Meldungen auf
     usage: /<command>
+  psreportsclose:
+    description: Schließt eine Meldung und tut dieses als "Abgeschlossen" kennzeichnen
+    usage: /<command> <Report-ID>

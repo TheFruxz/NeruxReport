@@ -1,5 +1,6 @@
 package de.fruxz.report
 
+import de.fruxz.report.command.CloseReportCommand
 import de.fruxz.report.command.ListReportsCommand
 import de.fruxz.report.command.ReportPlayerCommand
 import de.fruxz.report.domain.Report
@@ -26,7 +27,10 @@ class NeruxReport : JavaPlugin() {
         getCommand("psreport").executor = ReportPlayerCommand()
         getCommand("psreport").tabCompleter = ReportPlayerCommand().tabCompleter
 
-        getCommand("pslistreports").executor = ListReportsCommand()
+        getCommand("psreportslist").executor = ListReportsCommand()
+
+        getCommand("psreportsclose").executor = CloseReportCommand()
+        getCommand("psreportsclose").tabCompleter = CloseReportCommand().tabCompleter
 
         ReportCooldownManager.runner.runTaskTimerAsynchronously(this, 20, 20)
 
