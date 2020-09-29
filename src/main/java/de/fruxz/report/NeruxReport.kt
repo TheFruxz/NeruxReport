@@ -2,7 +2,9 @@ package de.fruxz.report
 
 import de.fruxz.report.command.CloseReportCommand
 import de.fruxz.report.command.ListReportsCommand
+import de.fruxz.report.command.MaxActiveReportAmountCommand
 import de.fruxz.report.command.ReportPlayerCommand
+import de.fruxz.report.domain.FileManager
 import de.fruxz.report.domain.Report
 import de.fruxz.report.domain.Transmission
 import de.fruxz.report.manager.ReportCooldownManager
@@ -28,6 +30,9 @@ class NeruxReport : JavaPlugin() {
          * @since v1.0
          */
         val permissionReportManager = "neruxreport.managing"
+
+        val configFile = FileManager("config.yml")
+
     }
 
     override fun onLoad() {
@@ -47,6 +52,9 @@ class NeruxReport : JavaPlugin() {
         getCommand("psreportsclose").executor = CloseReportCommand()
         getCommand("psreportsclose").tabCompleter = CloseReportCommand().tabCompleter
         getCommand("psreportsclose").permission = permissionReportManager
+
+        getCommand("psMaxReports").executor = MaxActiveReportAmountCommand()
+        getCommand("psMaxReports").permission = permissionReportManager
 
         ReportCooldownManager.runner.runTaskTimerAsynchronously(this, 20, 20)
 
