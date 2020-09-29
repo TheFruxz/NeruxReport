@@ -7,6 +7,7 @@ import de.fruxz.report.domain.Report
 import de.fruxz.report.domain.Transmission
 import de.fruxz.report.manager.ReportCooldownManager
 import de.fruxz.report.manager.ReportManager
+import de.fruxz.report.manager.ReportMaxAmountManager
 import org.bukkit.Bukkit
 import org.bukkit.Sound
 import org.bukkit.command.Command
@@ -28,7 +29,7 @@ class ReportPlayerCommand : CommandExecutor {
 
                 if (!cooldownManager.isCooldowning()) {
                     if (args.size >= 2) {
-                        if (ReportManager().hasReportedAmount(sender.uniqueId) <= 20) {
+                        if (ReportManager().hasReportedAmount(sender.uniqueId) <= ReportMaxAmountManager().getMaxActiveReportAmount()) {
                             val target = Bukkit.getOfflinePlayer(args[0])
 
                             if (target != null && target.hasPlayedBefore()) {
@@ -67,7 +68,7 @@ class ReportPlayerCommand : CommandExecutor {
                             } else
                                 Transmission("§7Der Spieler §e${args[0]} §7 wurde hier §cnoch nie §7gesehen!").send(sender)
                         } else
-                            Transmission("§7Du kannst nur §cmaximal 20 Personen gleichzeitig §7aktiv gemeldet haben!").send(sender)
+                            Transmission("§7Du kannst nur §cmaximal " + ReportMaxAmountManager().getMaxActiveReportAmount() + " Personen gleichzeitig §7aktiv gemeldet haben!").send(sender)
                     } else
                         Transmission("§7Nutze §e/$label <Spieler> <Grund...>§7!").send(sender)
                 } else

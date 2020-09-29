@@ -14,3 +14,6 @@ commands:
   psreportsclose:
     description: Schließt eine Meldung und tut dieses als "Abgeschlossen" kennzeichnen
     usage: /<command> <Report-ID>
+  psMaxReports:
+    description: Ändert die Einstellung für die maximale Anzahl von aktiven Reports pro Spieler
+    usage: /<command> (<Neue Anzahl>)
